@@ -2,12 +2,12 @@ import { useState } from 'react'
 import { media } from '../lib/media'
 
 const COVERS = [
-  { t: 'Hair & beauty', src: media.beauty },
-  { t: 'Health & fitness', src: media.fitness },
-  { t: 'Private chef', src: media.chef },
-  { t: 'Home & trades', src: media.kitchen },
-  { t: 'Legal', src: media.control },
-  { t: 'Housing', src: media.rent, fresh: true },
+  { t: 'Hair & beauty', src: media.serviceHair },
+  { t: 'Health & fitness', src: media.serviceFitness },
+  { t: 'Private chef', src: media.serviceChef },
+  { t: 'Home & trades', src: media.serviceHome },
+  { t: 'Legal', src: media.serviceLegal },
+  { t: 'Housing', src: media.serviceHousing, fresh: true },
 ] as const
 
 export function UseIt() {

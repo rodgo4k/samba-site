@@ -5,19 +5,19 @@ const TILES = [
     id: 'words',
     label: 'Your words',
     d: 'Ask in Portuguese, Spanish, Haitian Creole, Mandarin, and more. Sambinha reads it the way you said it.',
-    src: media.language,
+    src: media.langWords,
   },
   {
     id: 'match',
     label: 'Language when you want it',
     d: 'Skill and proximity first. Language and background when they matter to the job.',
-    src: media.street,
+    src: media.langMatch,
   },
   {
     id: 'chat',
     label: 'Chat in a language you share',
     d: 'Align the job with a pro nearby, in the app. No calls or texts until you decide to message.',
-    src: media.chat,
+    src: media.langChat,
   },
 ] as const
 

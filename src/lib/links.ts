@@ -3,6 +3,13 @@ export const APP_STORE =
 export const PLAY_STORE =
   'https://play.google.com/store/apps/details?id=com.sambaapp.foretheist'
 
+export function storeUrl() {
+  if (typeof navigator === 'undefined') return APP_STORE
+  const ua = navigator.userAgent
+  if (/android/i.test(ua)) return PLAY_STORE
+  return APP_STORE
+}
+
 export const SOCIAL = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/sambaapp' },
   { label: 'X (Twitter)', href: 'https://x.com/sambaapp' },

@@ -15,7 +15,7 @@ const FAMILY = [
     d: 'A marketplace for professionals: beauty, health, trades, legal, food, plus housing. Matching on skill, language, and proximity. Hire only in the app.',
     href: '/#find',
     cta: 'Find a pro',
-    src: media.app,
+    src: media.matchApp,
     external: false,
   },
   {
@@ -24,7 +24,7 @@ const FAMILY = [
     d: 'Applied research lab behind Samba and Yankee. Matching, identity, and multilingual models. The infrastructure, not the storefront.',
     href: FORETHEIST,
     cta: 'Visit Foretheist',
-    src: media.control,
+    src: media.controlPro,
     external: true,
   },
   {
@@ -33,7 +33,7 @@ const FAMILY = [
     d: 'Chronological social: feed, chat, and crowds, with no ranking working against you. Same lab as Samba, a different job.',
     href: YANKEE,
     cta: 'Visit Yankee',
-    src: media.street,
+    src: media.scaleChat,
     external: true,
   },
 ] as const
@@ -62,14 +62,16 @@ const POINTS = [
 ]
 
 const RAIL = [
-  media.story,
-  media.boston,
-  media.language,
-  media.jersey,
-  media.kitchen,
-  media.splash,
-  media.fitness,
-  media.chef,
+  media.langWords,
+  media.langChat,
+  media.scaleMarkets,
+  media.scaleChat,
+  media.scaleHousing,
+  media.matchLanguage,
+  media.matchApp,
+  media.controlPro,
+  media.serviceHousing,
+  media.housingSell,
 ]
 
 export function About() {
@@ -85,7 +87,7 @@ export function About() {
           <h1 className="about-title enter">
             <span>We built Samba so you don’t have to translate your life.</span>
             <span className="accent">
-              A marketplace for professionals, and a fairer way to rent.
+              A marketplace for professionals, and a fairer way to rent and hire.
             </span>
           </h1>
           <ul className="about-ticks enter">
@@ -96,7 +98,7 @@ export function About() {
         </div>
         <div className="enter">
           <Photo
-            src={media.story}
+            src={media.aboutHero}
             className="hero-shot"
             slot="story"
             caption="Boston, 2024. A Foretheist product"
@@ -154,7 +156,7 @@ export function About() {
           <Reveal>
             <div className="about-story-visual">
               <Photo
-                src={media.language}
+                src={media.matchLanguage}
                 slot="story-side"
                 className="about-sticky-photo"
                 caption="Ask in the language you already use"
@@ -255,7 +257,7 @@ export function About() {
               <StoreBadges />
             </div>
             <Photo
-              src={media.splash}
+              src={media.matchApp}
               slot="splash"
               className="splash-photo"
               caption="Get the app to hire, apply, or list"

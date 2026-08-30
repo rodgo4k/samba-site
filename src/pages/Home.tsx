@@ -1,5 +1,8 @@
 import { Collage } from '../components/Collage'
 import { DevStudio } from '../components/DevStudio'
+import { HowApp } from '../components/HowApp'
+import { HowChat } from '../components/HowChat'
+import { HowConfirm } from '../components/HowConfirm'
 import { HousingStudio } from '../components/HousingStudio'
 import { MatchStudio } from '../components/MatchStudio'
 import { Photo } from '../components/Photo'
@@ -36,17 +39,17 @@ const SCALE = [
   {
     t: 'Massachusetts and New Jersey',
     d: 'Live now. Matching on skill, proximity, and language. Then more markets.',
-    src: media.street,
+    src: media.scaleMarkets,
   },
   {
     t: 'Chat before you hire',
     d: 'Align the job in-app. No calls or texts until you decide to message.',
-    src: media.chat,
+    src: media.scaleChat,
   },
   {
     t: 'Housing, if you need it',
     d: 'You can also rent or sell. Landlords cannot ask for more than two months’ rent.',
-    src: media.kitchen,
+    src: media.scaleHousing,
   },
 ]
 
@@ -132,7 +135,7 @@ export function Home() {
           </Reveal>
           <Reveal delay={120}>
             <aside className="id-card">
-              <Photo src={media.control} slot="control" className="id-photo" />
+              <Photo src={media.controlPro} slot="control" className="id-photo" />
               <div className="id-card-row">
                 <div>
                   <strong>Checked in</strong>
@@ -172,7 +175,13 @@ export function Home() {
             {STEPS.map((s, i) => (
               <Reveal key={s.n} delay={i * 90}>
                 <article className="step">
-                  <Photo src={s.src} slot={`how-${s.n}`} className="step-photo" />
+                  {s.n === '01' ? (
+                    <HowChat />
+                  ) : s.n === '02' ? (
+                    <HowApp />
+                  ) : (
+                    <HowConfirm />
+                  )}
                   <span className="step-n">{s.n}</span>
                   <h3>{s.t}</h3>
                   <p>{s.d}</p>

@@ -1037,6 +1037,10 @@ p {
   animation: openShot 1.55s var(--ease) 0.5s forwards;
 }
 
+.hero-shot .photo-crop img {
+  object-position: center 40%;
+}
+
 @keyframes openShot {
   to {
     clip-path: inset(0 round var(--r));
@@ -1855,6 +1859,10 @@ p {
   border-radius: var(--r) var(--r) 0 0;
 }
 
+.id-photo .photo-crop img {
+  object-position: center 62%;
+}
+
 .id-card-row {
   display: flex;
   gap: 12px;
@@ -1891,27 +1899,6 @@ p {
   gap: 24px;
 }
 
-.steps::before {
-  content: '';
-  position: absolute;
-  top: 100px;
-  left: 10%;
-  right: 10%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--leaf), transparent);
-  transform: scaleX(0);
-  transform-origin: left;
-  animation: growLine 1.2s var(--ease) both;
-  animation-timeline: view();
-  animation-range: entry 0% cover 35%;
-}
-
-@keyframes growLine {
-  to {
-    transform: scaleX(1);
-  }
-}
-
 .step-n {
   display: inline-block;
   color: var(--leaf);
@@ -1931,6 +1918,141 @@ p {
 
 .step-photo .photo-crop {
   height: 200px;
+}
+
+.how-app {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 200px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  border-radius: var(--r);
+  background: var(--ice);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 28px #1a1f1b10;
+  pointer-events: none;
+  user-select: none;
+}
+
+.how-app-word {
+  --scale: 0.62;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin: 0;
+  line-height: 0;
+}
+
+.how-app-word span {
+  display: block;
+  flex: none;
+  width: calc(var(--lw) * 1px * var(--scale));
+  height: calc(67 * 1px * var(--scale));
+  overflow: hidden;
+  animation: howAppHop 2s cubic-bezier(0.22, 1.4, 0.36, 1) infinite;
+  animation-delay: calc(var(--i) * 0.22s - 2s);
+}
+
+.how-app-word img {
+  display: block;
+  width: calc(295 * 1px * var(--scale));
+  height: calc(67 * 1px * var(--scale));
+  max-width: none;
+  object-fit: fill;
+  transform: translateX(calc(var(--lx) * -1px * var(--scale)));
+}
+
+@keyframes howAppHop {
+  0%,
+  14%,
+  100% {
+    transform: translateY(0);
+  }
+  7% {
+    transform: translateY(-12px);
+  }
+}
+
+.how-chat {
+  height: 200px;
+  margin-bottom: 16px;
+  pointer-events: none;
+  user-select: none;
+  box-shadow: 0 12px 28px #1a1f1b10;
+}
+
+.how-chat .ask-head {
+  flex: none;
+  padding: 10px 12px;
+  gap: 8px;
+}
+
+.how-chat .ask-head img {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+}
+
+.how-chat .ask-head strong {
+  font-size: 13px;
+}
+
+.how-chat .ask-head span {
+  font-size: 11px;
+}
+
+.how-chat .ask-log {
+  flex: 1;
+  min-height: 0;
+  padding: 10px 12px;
+  gap: 8px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.how-chat .ask-log::-webkit-scrollbar {
+  display: none;
+}
+
+.how-chat .bubble {
+  padding: 8px 12px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.how-chat .bubble.bot {
+  animation: howChatIn 0.45s var(--ease) both;
+}
+
+.how-chat .bubble.user {
+  animation: howChatOut 0.45s var(--ease) both;
+}
+
+.how-chat .ask-out {
+  animation: howChatIn 0.45s var(--ease) both;
+}
+
+.how-chat .ask-out .store-icons {
+  transform: scale(0.86);
+  transform-origin: left center;
+}
+
+@keyframes howChatIn {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+}
+
+@keyframes howChatOut {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
 }
 
 .step h3 {
@@ -1966,6 +2088,14 @@ p {
 .start-tile figure {
   height: 220px;
   border-radius: var(--r) var(--r) 0 0;
+}
+
+.start-tile figure[data-slot='words'] img {
+  object-position: center 88%;
+}
+
+.start-tile figure[data-slot='match'] img {
+  object-position: center 80%;
 }
 
 .start-tile h3 {
@@ -2702,10 +2832,6 @@ p {
     width: calc(100% - 40px);
   }
 
-  .steps::before {
-    display: none;
-  }
-
   .hero {
     min-height: calc(100svh - 64px);
     padding: 12px 0 24px;
@@ -2728,15 +2854,15 @@ p {
   .spatial {
     --spatial-min-scale: 0.78;
     --spatial-curve: 9;
-    --spatial-card-w: 280px;
+    --spatial-card-w: 200px;
   }
 
   .spatial-stage {
-    height: 500px;
+    height: 400px;
   }
 
   .spatial-track {
-    gap: 48px;
+    gap: 20px;
   }
 
   .hero-title {
@@ -2835,7 +2961,7 @@ p {
   .about-use-frame img,
   .stagger-flip-cube,
   .pros li,
-  .steps::before {
+  .how-app-word span {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;

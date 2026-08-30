@@ -5,19 +5,19 @@ const CARDS = [
   {
     t: 'Language-first matching',
     d: 'Skill and proximity first. Language and background when you want them.',
-    src: media.language,
+    src: media.matchLanguage,
     cap: 'Community, in more than one language',
   },
   {
     t: 'Verified professionals',
     d: 'Identity-checked profiles. Chat in the app before you hire.',
-    src: media.verified,
+    src: media.matchVerified,
     cap: 'A professional you can actually meet',
   },
   {
     t: 'One app',
     d: 'Beauty, home, health, legal, food, and housing if you need it. Hire in Samba, not here.',
-    src: media.app,
+    src: media.matchApp,
     cap: 'The rest happens on your phone',
   },
 ]

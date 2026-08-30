@@ -9,14 +9,14 @@ if (!CustomEase.get('move')) {
 }
 
 const CARDS = [
-  { id: 'cleaning', src: media.kitchen, variant: 'landscape', slot: '1' },
-  { id: 'beauty', src: media.beauty, variant: '', slot: '2' },
-  { id: 'fitness', src: media.fitness, variant: 'landscape', slot: '3' },
-  { id: 'legal', src: media.control, variant: 'portrait', slot: '4' },
-  { id: 'trades', src: media.verified, variant: '', slot: '5' },
-  { id: 'food', src: media.chef, variant: 'landscape', slot: '6' },
-  { id: 'language', src: media.language, variant: 'landscape', slot: '7' },
-  { id: 'app', src: media.hero, variant: '', slot: '8' },
+  { id: 'cleaning', src: media.serviceCleaning, variant: 'landscape', slot: '1' },
+  { id: 'beauty', src: media.serviceHair, variant: '', slot: '2' },
+  { id: 'fitness', src: media.serviceFitness, variant: 'landscape', slot: '3' },
+  { id: 'legal', src: media.serviceLegal, variant: 'portrait', slot: '4' },
+  { id: 'trades', src: media.serviceHome, variant: '', slot: '5' },
+  { id: 'food', src: media.serviceChef, variant: 'landscape', slot: '6' },
+  { id: 'housing', src: media.serviceHousing, variant: 'landscape', slot: '7' },
+  { id: 'gardening', src: media.serviceGardening, variant: '', slot: '8' },
 ] as const
 
 type CollageApi = {

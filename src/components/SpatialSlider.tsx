@@ -1,20 +1,22 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { Draggable } from 'gsap/Draggable'
 import { InertiaPlugin } from 'gsap/InertiaPlugin'
-import { APP_STORE } from '../lib/links'
+import { storeUrl } from '../lib/links'
 import { media } from '../lib/media'
 
 gsap.registerPlugin(Draggable, InertiaPlugin)
 
 const SERVICES = [
-  { id: 'housing', t: 'Housing', src: media.rent, fresh: true },
-  { id: 'cleaning', t: 'House cleaning', src: media.kitchen },
-  { id: 'beauty', t: 'Hair & beauty', src: media.beauty },
-  { id: 'fitness', t: 'Health & fitness', src: media.fitness },
-  { id: 'food', t: 'Private chef', src: media.chef },
-  { id: 'legal', t: 'Legal', src: media.control },
-  { id: 'trades', t: 'Home & trades', src: media.street },
+  { id: 'housing', t: 'Housing', src: media.serviceHousing, fresh: true },
+  { id: 'rooms', t: 'Rooms', src: media.serviceRoom, fresh: true },
+  { id: 'cleaning', t: 'House cleaning', src: media.serviceCleaning },
+  { id: 'beauty', t: 'Hair & beauty', src: media.serviceHair },
+  { id: 'fitness', t: 'Health & fitness', src: media.serviceFitness },
+  { id: 'food', t: 'Private chef', src: media.serviceChef },
+  { id: 'legal', t: 'Legal', src: media.serviceLegal },
+  { id: 'trades', t: 'Home & trades', src: media.serviceHome },
+  { id: 'gardening', t: 'Gardening', src: media.serviceGardening },
 ] as const
 
 const COPIES = 3
@@ -26,6 +28,11 @@ function readVar(el: HTMLElement, name: string, fallback: number) {
 
 export function SpatialSlider() {
   const root = useRef<HTMLDivElement>(null)
+  const [href, setHref] = useState(() => storeUrl())
+
+  useEffect(() => {
+    setHref(storeUrl())
+  }, [])
 
   useEffect(() => {
     const el = root.current
@@ -74,6 +81,8 @@ export function SpatialSlider() {
         const rotateY = -off * curve
         const sink = d * d * 14
         slot.style.transform = `translateY(${sink}px) rotateY(${rotateY}deg) scale(${scale})`
+        const card = slot.querySelector<HTMLElement>('.spatial-card')
+        if (card) card.style.transform = ''
         slot.style.zIndex = String(Math.round(falloff * 100))
         slot.classList.toggle('is-active', d < 0.45)
       })
@@ -172,7 +181,7 @@ export function SpatialSlider() {
               <a
                 key={`${copy}-${s.id}`}
                 className="spatial-slot"
-                href={APP_STORE}
+                href={href}
                 target="_blank"
                 rel="noopener noreferrer"
               >
