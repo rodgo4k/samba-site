@@ -5,6 +5,7 @@ import { MatchStudio } from '../components/MatchStudio'
 import { Photo } from '../components/Photo'
 import { Reveal } from '../components/Reveal'
 import { SearchEmbed } from '../components/SearchEmbed'
+import { SpatialSlider } from '../components/SpatialSlider'
 import { StoreBadges } from '../components/StoreIcons'
 import { WhyRail } from '../components/WhyRail'
 import { media } from '../lib/media'
@@ -76,6 +77,18 @@ export function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="section spatial-band" id="services">
+        <div className="shell">
+          <Reveal>
+            <div className="section-header">
+              <p className="eyebrow">Services</p>
+              <h2>What you can find in the app</h2>
+            </div>
+          </Reveal>
+        </div>
+        <SpatialSlider />
       </section>
 
       <section className="section" id="matching">
@@ -174,8 +187,8 @@ export function Home() {
         <div className="shell">
           <Reveal>
             <div className="section-header">
-              <p className="eyebrow">Start</p>
-              <h2>Move from the site to the app in one tap</h2>
+              <p className="eyebrow">Language</p>
+              <h2>Ask the way you already speak</h2>
             </div>
           </Reveal>
           <Reveal delay={80}>

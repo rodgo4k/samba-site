@@ -52,7 +52,7 @@ export function Header() {
               <span className="new-pill">New</span>
             </a>
             <a href="/#start" onClick={close}>
-              Start
+              Language
             </a>
             <NavLink to="/about" onClick={close}>
               About

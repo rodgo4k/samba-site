@@ -10,13 +10,18 @@ export function Footer() {
           <Link to="/" className="wordmark" aria-label="Samba home">
             <Logo />
           </Link>
+          <p className="footer-tagline">
+            The perfect professional for you. Housing, rooms, health, food,
+            legal, and more. Find all in one app.
+          </p>
         </div>
         <div>
           <p className="footer-label">Product</p>
           <a href="/#find">Sambinha</a>
+          <a href="/#services">Services</a>
           <a href="/#matching">Matching</a>
           <a href="/#housing">Housing</a>
-          <a href="/#start">Start</a>
+          <a href="/#start">Language</a>
         </div>
         <div>
           <p className="footer-label">Company</p>

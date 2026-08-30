@@ -1,30 +1,23 @@
 import { media } from '../lib/media'
-import { APP_STORE, PLAY_STORE } from '../lib/links'
 
 const TILES = [
   {
-    id: 'ios',
-    label: 'iOS',
-    d: 'Download Samba on the App Store.',
-    src: media.ios,
-    href: APP_STORE,
-    external: true,
+    id: 'words',
+    label: 'Your words',
+    d: 'Ask in Portuguese, Spanish, Haitian Creole, Mandarin, and more. Sambinha reads it the way you said it.',
+    src: media.language,
   },
   {
-    id: 'android',
-    label: 'Android',
-    d: 'Get Samba on Google Play.',
-    src: media.android,
-    href: PLAY_STORE,
-    external: true,
+    id: 'match',
+    label: 'Language when you want it',
+    d: 'Skill and proximity first. Language and background when they matter to the job.',
+    src: media.street,
   },
   {
-    id: 'sambinha',
-    label: 'Sambinha',
-    d: 'Ask here first. Then open the app to hire.',
-    src: media.sambinha,
-    href: '/#find',
-    external: false,
+    id: 'chat',
+    label: 'Chat in a language you share',
+    d: 'Align the job with a pro nearby, in the app. No calls or texts until you decide to message.',
+    src: media.chat,
   },
 ] as const
 
@@ -32,20 +25,13 @@ export function DevStudio() {
   return (
     <div className="start-grid">
       {TILES.map((t) => (
-        <a
-          key={t.id}
-          className="start-tile"
-          href={t.href}
-          {...(t.external
-            ? { target: '_blank', rel: 'noopener noreferrer' }
-            : {})}
-        >
+        <article key={t.id} className="start-tile">
           <figure data-slot={t.id}>
             <img src={t.src} alt="" />
           </figure>
           <h3>{t.label}</h3>
           <p>{t.d}</p>
-        </a>
+        </article>
       ))}
     </div>
   )
