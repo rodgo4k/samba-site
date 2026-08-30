@@ -44,8 +44,8 @@ export function SpatialSlider() {
     const count = SERVICES.length
     if (!stage || !track || slots.length === 0) return
 
-    const state = { p: count }
-    const press = { x: 0, p: count }
+    const state = { p: count as number }
+    const press = { x: 0, p: count as number }
     const proxy = document.createElement('div')
     let snapTween: gsap.core.Tween | null = null
 
