@@ -6,11 +6,25 @@ import { StoreIcons } from './StoreIcons'
 
 type Turn = { q: string; a: SearchResult | null }
 
+const PLACEHOLDERS = [
+  'A Portuguese-speaking cleaner in Boston…',
+  'An English-speaking cleaner in Boston…',
+  'A Spanish-speaking cleaner in Boston…',
+  'A Haitian Creole-speaking cleaner in Boston…',
+  'A Mandarin-speaking cleaner in Boston…',
+  'An Arabic-speaking cleaner in Boston…',
+  'A French-speaking cleaner in Boston…',
+  'A Vietnamese-speaking cleaner in Boston…',
+] as const
+
 export function SearchEmbed({
   onCategory,
 }: {
   onCategory?: (id: string | null) => void
 }) {
+  const [placeholder] = useState(
+    () => PLACEHOLDERS[Math.floor(Math.random() * PLACEHOLDERS.length)],
+  )
   const [value, setValue] = useState('')
   const [busy, setBusy] = useState(false)
   const [active, setActive] = useState<string | null>(null)
@@ -50,7 +64,7 @@ export function SearchEmbed({
       <div className="ask-log">
         {!turn && !busy && (
           <p className="bubble bot">
-            What do you need? A cut, a trainer, a leak, a chef.
+            What do you need? A room, a cut, a trainer, a leak, a chef.
           </p>
         )}
         {turn && (
@@ -77,6 +91,7 @@ export function SearchEmbed({
             onClick={() => run(c.label, c.id)}
           >
             {c.label}
+            {'fresh' in c && c.fresh ? <span className="new-pill">New</span> : null}
           </button>
         ))}
       </div>
@@ -91,7 +106,7 @@ export function SearchEmbed({
         <input
           value={value}
           onChange={(e) => setValue(e.target.value)}
-          placeholder="A Portuguese-speaking cleaner in Boston…"
+          placeholder={placeholder}
           aria-label="Find a pro"
           autoComplete="off"
         />

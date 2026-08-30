@@ -61,8 +61,11 @@ export function Home() {
           </div>
           <div className="hero-copy">
             <h1 className="hero-title enter">
-              <span>Find the right professional.</span>
-              <span className="accent">Hire nearby, in your language.</span>
+              <span>The perfect professional for you.</span>
+              <span className="accent">
+                Housing, rooms, health, food, legal, and more.{' '}
+                <span className="hero-title-app">Find all in one app.</span>
+              </span>
             </h1>
             <div className="enter hero-ask">
               <SearchEmbed onCategory={setFocusId} />

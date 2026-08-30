@@ -1,3 +1,4 @@
+import { SiApple, SiGoogleplay } from 'react-icons/si'
 import { APP_STORE, PLAY_STORE } from '../lib/links'
 
 export function Arrow() {
@@ -11,26 +12,12 @@ export function Arrow() {
   )
 }
 
-function Apple({ size }: { size: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        fill="currentColor"
-        d="M16.7 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.2-2.8.9-3.5.9s-1.8-.8-3-.8c-1.5 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.3 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7 2-.1 2.9-2.3c1-.1.7-1.9 1.8-3.1-1.6-.7-1.9-2.3-1.9-2.3zm-2-6.3c.6-.8 1.1-1.9.9-3-1 .1-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.2-.6 2.9-1.4z"
-      />
-    </svg>
-  )
+export function Apple({ size = 14 }: { size?: number }) {
+  return <SiApple size={size} aria-hidden />
 }
 
-function Play({ size }: { size: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        fill="currentColor"
-        d="M4.3 21.3V2.7c0-.7.8-1.1 1.4-.7l14.3 9.3c.6.4.6 1.3 0 1.7L5.7 22c-.6.4-1.4 0-1.4-.7z"
-      />
-    </svg>
-  )
+export function Play({ size = 14 }: { size?: number }) {
+  return <SiGoogleplay size={size} aria-hidden />
 }
 
 export function StoreIcons({ size = 14 }: { size?: number }) {
@@ -50,10 +37,11 @@ export function StoreBadges() {
   return (
     <div className="hero-actions">
       <a className="btn btn-leaf" href={APP_STORE} target="_blank" rel="noopener noreferrer">
+        <Apple size={15} />
         App Store
-        <Arrow />
       </a>
       <a className="btn btn-ghost" href={PLAY_STORE} target="_blank" rel="noopener noreferrer">
+        <Play size={15} />
         Google Play
       </a>
     </div>

@@ -10,6 +10,7 @@ export type Professional = {
 }
 
 export const CATEGORIES = [
+  { id: 'housing', label: 'Rent a room', fresh: true },
   { id: 'cleaning', label: 'House cleaning' },
   { id: 'beauty', label: 'Hair & beauty' },
   { id: 'fitness', label: 'Personal trainer' },

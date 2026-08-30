@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { APP_STORE, PLAY_STORE } from '../lib/links'
 import { Logo } from './Logo'
-import { Arrow } from './StoreIcons'
+import { Apple, Play } from './StoreIcons'
 
 export function Header() {
   const [mini, setMini] = useState(false)
@@ -59,22 +59,29 @@ export function Header() {
             </NavLink>
             <div className="nav-drawer-stores">
               <a className="btn btn-ghost" href={PLAY_STORE} target="_blank" rel="noopener noreferrer">
+                <Play size={15} />
                 Google Play
               </a>
               <a className="btn btn-leaf" href={APP_STORE} target="_blank" rel="noopener noreferrer">
+                <Apple size={15} />
                 App Store
-                <Arrow />
               </a>
             </div>
           </nav>
         </div>
         <div className="nav-end">
           <a className="btn btn-ghost nav-play" href={PLAY_STORE} target="_blank" rel="noopener noreferrer">
+            <Play size={15} />
             Google Play
           </a>
-          <a className="btn btn-leaf" href={APP_STORE} target="_blank" rel="noopener noreferrer">
+          <a
+            className="btn btn-leaf nav-bar-store"
+            href={APP_STORE}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Apple size={15} />
             App Store
-            <Arrow />
           </a>
           <button
             type="button"
