@@ -17,7 +17,7 @@ import { useState } from 'react'
 const STEPS = [
   {
     n: '01',
-    t: 'Ask Sambinha',
+    t: 'Ask Samba AI',
     d: 'Describe the job in your words. Preview who is around.',
     src: media.howAsk,
   },
@@ -65,7 +65,7 @@ export function Home() {
           </div>
           <div className="hero-copy">
             <h1 className="hero-title enter">
-              <span>The perfect professional for you.</span>
+              <span>Rent, hire, and get everything in one place.</span>
               <span className="accent">
                 Housing, rooms, health, food, legal, and more.{' '}
                 <span className="hero-title-app">Find all in one app.</span>
@@ -243,7 +243,7 @@ export function Home() {
               src={media.splash}
               slot="splash"
               className="splash-photo"
-              caption="The people you already know, in one app"
+              caption="Hire, apply, and list in the app"
             />
           </div>
         </Reveal>

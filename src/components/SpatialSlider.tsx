@@ -9,7 +9,6 @@ gsap.registerPlugin(Draggable, InertiaPlugin)
 
 const SERVICES = [
   { id: 'housing', t: 'Housing', src: media.serviceHousing, fresh: true },
-  { id: 'rooms', t: 'Rooms', src: media.serviceRoom, fresh: true },
   { id: 'cleaning', t: 'House cleaning', src: media.serviceCleaning },
   { id: 'beauty', t: 'Hair & beauty', src: media.serviceHair },
   { id: 'fitness', t: 'Health & fitness', src: media.serviceFitness },

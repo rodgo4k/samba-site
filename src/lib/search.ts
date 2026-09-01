@@ -14,7 +14,7 @@ const LANG: [RegExp, string][] = [
   [/\b(portugu|brazil|brasileir)\w*/i, 'Portuguese'],
   [/\b(spanish|espanhol|latino|latina|mexic)\w*/i, 'Spanish'],
   [/\b(haitian|kreyol|creole)\w*/i, 'Haitian Creole'],
-  [/\b(mandarin|chinese|chinês|chines)\w*/i, 'Mandarin'],
+  [/\b(mandarin|chinese|chinês|chines)\w*/i, 'Chinese'],
   [/\b(vietnamese|viet)\w*/i, 'Vietnamese'],
   [/\b(arabic|arabe|árabe)\w*/i, 'Arabic'],
   [/\b(french|franc[eê]s)\w*/i, 'French'],
@@ -67,7 +67,7 @@ function localSearch(query: string): SearchResult {
   if (!q) {
     return {
       kind: 'text',
-      text: 'Tell Sambinha what you need: a cleaner, a lawyer, a room. Matches open in the app.',
+      text: 'Tell Samba AI what you need: a cleaner, a lawyer, a room. Matches open in the app.',
     }
   }
 
@@ -109,7 +109,7 @@ function localSearch(query: string): SearchResult {
 
   return {
     kind: 'text',
-    text: 'Sambinha can keep going in the app. Search, chat, and hire live there. Nothing books on the website.',
+    text: 'Samba AI can keep going in the app. Search, chat, and hire live there. Nothing books on the website.',
   }
 }
 

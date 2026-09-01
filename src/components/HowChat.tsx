@@ -115,7 +115,7 @@ export function HowChat() {
       <div className="ask-head">
         <img src="/favicon.png" alt="" width={28} height={28} />
         <div>
-          <strong>Sambinha</strong>
+          <strong>Samba AI</strong>
           <span>Ask in your words. Hire in the app.</span>
         </div>
       </div>

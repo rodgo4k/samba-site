@@ -15,29 +15,40 @@ export function Footer() {
             legal, and more. Find all in one app.
           </p>
         </div>
-        <div>
-          <p className="footer-label">Product</p>
-          <a href="/#find">Sambinha</a>
-          <a href="/#services">Services</a>
-          <a href="/#matching">Matching</a>
-          <a href="/#housing">Housing</a>
-          <a href="/#start">Language</a>
-        </div>
-        <div>
-          <p className="footer-label">Company</p>
-          <Link to="/about">About</Link>
-          <a href={FORETHEIST} target="_blank" rel="noopener noreferrer">
-            Foretheist
-          </a>
-          <a href={SUPPORT}>Contact</a>
-        </div>
-        <div>
-          <p className="footer-label">Connect</p>
-          {SOCIAL.map((s) => (
-            <a key={s.href} href={s.href} target="_blank" rel="noopener noreferrer">
-              {s.label}
-            </a>
-          ))}
+        <div className="footer-nav">
+          <div className="footer-nav-col">
+            <div>
+              <p className="footer-label">Product</p>
+              <a href="/#find">Samba AI</a>
+              <a href="/#services">Services</a>
+              <a href="/#matching">Matching</a>
+              <a href="/#housing">Housing</a>
+              <a href="/#start">Language</a>
+            </div>
+            <div>
+              <p className="footer-label">Company</p>
+              <Link to="/about">About</Link>
+              <a href={FORETHEIST} target="_blank" rel="noopener noreferrer">
+                Foretheist
+              </a>
+              <a href={SUPPORT}>Contact</a>
+            </div>
+          </div>
+          <div className="footer-nav-col">
+            <div>
+              <p className="footer-label">Connect</p>
+              {SOCIAL.map((s) => (
+                <a
+                  key={s.href}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {s.label}
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
       <div className="shell footer-legal">

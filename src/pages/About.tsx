@@ -56,7 +56,7 @@ const POINTS = [
   },
   {
     n: '04',
-    t: 'Sambinha is the interface',
+    t: 'Samba AI is the interface',
     d: 'Ask in the words you use. On the site it’s a preview. In the app it stays with you.',
   },
 ]
@@ -202,6 +202,9 @@ export function About() {
           <Reveal>
             <p className="eyebrow">Language</p>
             <h2>Ask the way you actually speak.</h2>
+            <p className="about-lede">
+              English, Portuguese, Spanish, Chinese, and Haitian Creole.
+            </p>
           </Reveal>
           <Reveal delay={80}>
             <LangCycle />

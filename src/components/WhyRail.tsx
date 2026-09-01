@@ -5,8 +5,8 @@ const CARDS = [
     tone: 'leaf',
     tag: 'hire',
     icon: 'ask',
-    q: 'Ask in the words you already use. Sambinha previews who is around.',
-    name: 'Sambinha',
+    q: 'Ask in the words you already use. Samba AI previews who is around.',
+    name: 'Samba AI',
     role: 'The interface',
   },
   {

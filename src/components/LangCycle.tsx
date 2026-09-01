@@ -2,14 +2,11 @@ import { useEffect, useState } from 'react'
 import { StaggerFlip, flipMs } from './originkit/StaggerFlip'
 
 const LANGS = [
-  'Português',
-  'Español',
-  'Kreyòl',
-  '中文',
-  'العربية',
-  'Français',
-  'Tiếng Việt',
   'English',
+  'Portuguese',
+  'Spanish',
+  'Chinese',
+  'Haitian Creole',
 ] as const
 
 const HOLD_MS = 1800

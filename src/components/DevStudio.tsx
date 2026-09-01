@@ -4,7 +4,7 @@ const TILES = [
   {
     id: 'words',
     label: 'Your words',
-    d: 'Ask in Portuguese, Spanish, Haitian Creole, Mandarin, and more. Sambinha reads it the way you said it.',
+    d: 'Ask in English, Portuguese, Spanish, Chinese, and Haitian Creole. Samba AI reads it the way you said it.',
     src: media.langWords,
   },
   {

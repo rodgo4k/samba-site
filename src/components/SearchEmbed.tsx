@@ -7,14 +7,11 @@ import { StoreIcons } from './StoreIcons'
 type Turn = { q: string; a: SearchResult | null }
 
 const PLACEHOLDERS = [
-  'A Portuguese-speaking cleaner in Boston…',
   'An English-speaking cleaner in Boston…',
+  'A Portuguese-speaking cleaner in Boston…',
   'A Spanish-speaking cleaner in Boston…',
+  'A Chinese-speaking cleaner in Boston…',
   'A Haitian Creole-speaking cleaner in Boston…',
-  'A Mandarin-speaking cleaner in Boston…',
-  'An Arabic-speaking cleaner in Boston…',
-  'A French-speaking cleaner in Boston…',
-  'A Vietnamese-speaking cleaner in Boston…',
 ] as const
 
 export function SearchEmbed({
@@ -56,7 +53,7 @@ export function SearchEmbed({
       <div className="ask-head">
         <img src="/favicon.png" alt="" width={36} height={36} />
         <div>
-          <strong>Sambinha</strong>
+          <strong>Samba</strong>
           <span>Ask in your words. Hire in the app.</span>
         </div>
       </div>
@@ -73,7 +70,7 @@ export function SearchEmbed({
           </p>
         )}
         {busy && (
-          <p className="bubble bot wait" aria-label="Sambinha is matching">
+          <p className="bubble bot wait" aria-label="Samba AI is matching">
             Matching nearby
             <i className="dots" />
           </p>
