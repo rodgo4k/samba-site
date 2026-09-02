@@ -1,4 +1,3 @@
-/** Swap files in /public/media. Keep these filenames. */
 export const media = {
   hero: '/media/hero.jpg',
   ask: '/media/ask.jpg',

@@ -1287,6 +1287,145 @@ p {
   cursor: default;
 }
 
+.pro-cards {
+  list-style: none;
+  margin: 2px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.pro-cards li {
+  animation: cardIn 0.55s var(--ease) both;
+}
+
+.pro-card {
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 12px;
+  background: var(--ice);
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px #1a1f1b0d;
+  color: inherit;
+  text-align: left;
+}
+
+.pro-card:hover {
+  border-color: #cfe6d5;
+}
+
+.pro-card-photo {
+  display: block;
+  width: 86px;
+  height: 86px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.pro-card-photo img {
+  display: block;
+  width: 86px;
+  height: 86px;
+  object-fit: cover;
+}
+
+.pro-card-body {
+  min-width: 0;
+}
+
+.pro-card-name {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0;
+}
+
+.pro-card-name strong {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.pro-card-out {
+  flex: none;
+  margin-top: 2px;
+  color: #b3b3b3;
+}
+
+.pro-card-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0 0;
+  color: #8a8a8a;
+  font-size: 12px;
+}
+
+.pro-tag {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.pro-tag.cleaning {
+  background: #e8f6ee;
+  color: #247448;
+}
+
+.pro-tag.beauty {
+  background: #fff3d6;
+  color: #8a6412;
+}
+
+.pro-tag.trades {
+  background: #ffe8d6;
+  color: #9a4b12;
+}
+
+.pro-tag.food {
+  background: #fde8ee;
+  color: #9a2f4a;
+}
+
+.pro-tag.fitness {
+  background: #e8eefc;
+  color: #2f4a9a;
+}
+
+.pro-tag.legal {
+  background: #eee8f6;
+  color: #5a3a8a;
+}
+
+.pro-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 6px 0 0;
+  color: #8a8a8a;
+  font-size: 11px;
+}
+
+.pro-card-rate {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.pro-card-star {
+  color: #f5b301;
+}
+
 .pros {
   list-style: none;
   margin: 10px 0 0;
@@ -3002,6 +3141,7 @@ p {
   .about-rule-text,
   .about-use-frame img,
   .stagger-flip-cube,
+  .pro-cards li,
   .pros li,
   .how-app-word span {
     animation: none !important;
