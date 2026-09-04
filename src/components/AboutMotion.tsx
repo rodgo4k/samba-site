@@ -29,16 +29,16 @@ export function AboutMotion({ root }: { root: RefObject<HTMLElement | null> }) {
         )
       }
 
-      gsap.utils.toArray<HTMLElement>('.about-family-card').forEach((card, i) => {
-        gsap.from(card, {
-          y: 56,
+      const family = el.querySelector('.scale-board')
+      if (family) {
+        gsap.from(family, {
+          y: 40,
           opacity: 0,
           duration: 0.9,
-          delay: i * 0.08,
           ease: 'power3.out',
-          scrollTrigger: { trigger: card, start: 'top 88%' },
+          scrollTrigger: { trigger: family, start: 'top 88%' },
         })
-      })
+      }
 
       const rail = el.querySelector('.about-rail-track')
       if (rail) {

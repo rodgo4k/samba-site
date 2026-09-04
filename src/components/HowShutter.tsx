@@ -20,7 +20,7 @@ const SLIDES = [
     t: 'Ask Samba AI in your words.',
     d: 'A room in Somerville, a Saturday cut, a leak, a chef. Samba AI reads the request the way you already speak, then previews who is nearby — matched on skill, language, and proximity.',
     facts: ['Preview on the site', 'Hire only in the app'],
-    src: media.scaleChat,
+    src: media.howMeet,
   },
   {
     n: '02',
@@ -34,7 +34,7 @@ const SLIDES = [
     t: 'Done in your language. Fairer rent.',
     d: 'English, Portuguese, Spanish, Chinese, Haitian Creole. Chat with a pro nearby on your phone. If you rent, landlords cannot ask for more than two months’ rent.',
     facts: ['Five languages', 'Two months’ rent cap'],
-    src: media.scaleHousing,
+    src: media.howRenovation,
   },
 ] as const
 

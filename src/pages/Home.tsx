@@ -3,32 +3,16 @@ import { DevStudio } from '../components/DevStudio'
 import { HowShutter } from '../components/HowShutter'
 import { HousingStudio } from '../components/HousingStudio'
 import { MatchStudio } from '../components/MatchStudio'
+import { ScaleStudio } from '../components/ScaleStudio'
 import { Photo } from '../components/Photo'
 import { Reveal } from '../components/Reveal'
 import { SearchEmbed } from '../components/SearchEmbed'
 import { SpatialSlider } from '../components/SpatialSlider'
+import { SplashCta } from '../components/SplashCta'
 import { StoreBadges } from '../components/StoreIcons'
 import { WhyRail } from '../components/WhyRail'
 import { media } from '../lib/media'
 import { useState } from 'react'
-
-const SCALE = [
-  {
-    t: 'Massachusetts and New Jersey',
-    d: 'Live now. Matching on skill, proximity, and language. Then more markets.',
-    src: media.scaleMarkets,
-  },
-  {
-    t: 'Chat before you hire',
-    d: 'Align the job in-app. No calls or texts until you decide to message.',
-    src: media.scaleChat,
-  },
-  {
-    t: 'Housing, if you need it',
-    d: 'You can also rent or sell. Landlords cannot ask for more than two months’ rent.',
-    src: media.scaleHousing,
-  },
-]
 
 export function Home() {
   const [focusId, setFocusId] = useState<string | null>(null)
@@ -145,12 +129,6 @@ export function Home() {
       <section className="section" id="start">
         <div className="shell">
           <Reveal>
-            <div className="section-header">
-              <p className="eyebrow">Language</p>
-              <h2>Ask the way you already speak</h2>
-            </div>
-          </Reveal>
-          <Reveal delay={80}>
             <DevStudio />
           </Reveal>
         </div>
@@ -159,45 +137,12 @@ export function Home() {
       <section className="section">
         <div className="shell">
           <Reveal>
-            <div className="section-header">
-              <p className="eyebrow">Scale</p>
-              <h2>Built for how people actually live here</h2>
-            </div>
+            <ScaleStudio />
           </Reveal>
-          <div className="card-grid text-cards">
-            {SCALE.map((c, i) => (
-              <Reveal key={c.t} delay={i * 80}>
-                <article className="text-card">
-                  <Photo src={c.src} slot={c.t} className="card-photo" />
-                  <h3>{c.t}</h3>
-                  <p>{c.d}</p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 
-      <section className="splash">
-        <Reveal>
-          <div className="shell splash-split">
-            <div className="splash-copy">
-              <h2>
-                The one app to get everything done.
-                <br />
-                Get it today.
-              </h2>
-              <StoreBadges />
-            </div>
-            <Photo
-              src={media.splash}
-              slot="splash"
-              className="splash-photo"
-              caption="Hire, apply, and list in the app"
-            />
-          </div>
-        </Reveal>
-      </section>
+      <SplashCta />
     </main>
   )
 }

@@ -21,6 +21,8 @@ export const media = {
   howAsk: '/media/how-ask.jpg',
   howApp: '/media/how-app.jpg',
   howDone: '/media/how-done.jpg',
+  howMeet: '/media/how-meet.jpg',
+  howRenovation: '/media/how-renovation.jpg',
   fitness: '/media/fitness.jpg',
   chef: '/media/chef.jpg',
   beauty: '/media/beauty.jpg',

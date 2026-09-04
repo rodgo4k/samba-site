@@ -3,40 +3,11 @@ import { AboutMotion } from '../components/AboutMotion'
 import { LangCycle } from '../components/LangCycle'
 import { Photo } from '../components/Photo'
 import { Reveal } from '../components/Reveal'
-import { Arrow, StoreBadges } from '../components/StoreIcons'
-import { FORETHEIST, YANKEE } from '../lib/links'
+import { FamilyStudio } from '../components/FamilyStudio'
+import { SplashCta } from '../components/SplashCta'
+import { FORETHEIST } from '../lib/links'
 import { media } from '../lib/media'
 import { UseIt } from '../components/UseIt'
-
-const FAMILY = [
-  {
-    k: 'This product',
-    t: 'Samba',
-    d: 'A marketplace for professionals: beauty, health, trades, legal, food, plus housing. Matching on skill, language, and proximity. Hire only in the app.',
-    href: '/#find',
-    cta: 'Find a pro',
-    src: media.matchApp,
-    external: false,
-  },
-  {
-    k: 'The lab',
-    t: 'Foretheist',
-    d: 'Applied research lab behind Samba and Yankee. Matching, identity, and multilingual models. The infrastructure, not the storefront.',
-    href: FORETHEIST,
-    cta: 'Visit Foretheist',
-    src: media.controlPro,
-    external: true,
-  },
-  {
-    k: 'The brother',
-    t: 'Yankee',
-    d: 'Chronological social: feed, chat, and crowds, with no ranking working against you. Same lab as Samba, a different job.',
-    href: YANKEE,
-    cta: 'Visit Yankee',
-    src: media.scaleChat,
-    external: true,
-  },
-] as const
 
 const POINTS = [
   {
@@ -109,37 +80,8 @@ export function About() {
       <section className="section">
         <div className="shell">
           <Reveal>
-            <div className="section-header">
-              <p className="eyebrow">Family</p>
-              <h2>Two products. One lab.</h2>
-              <p className="about-lede">
-                Samba sits next to Yankee. Both run on Foretheist, the applied
-                research lab that builds the matching, identity, and language
-                layer underneath.
-              </p>
-            </div>
+            <FamilyStudio />
           </Reveal>
-          <div className="about-family">
-            {FAMILY.map((f) => (
-              <a
-                key={f.t}
-                className="about-family-card"
-                href={f.href}
-                {...(f.external
-                  ? { target: '_blank', rel: 'noopener noreferrer' }
-                  : {})}
-              >
-                <Photo src={f.src} slot={f.t} className="about-family-photo" />
-                <p className="eyebrow">{f.k}</p>
-                <h3>{f.t}</h3>
-                <p>{f.d}</p>
-                <span className="about-family-cta">
-                  {f.cta}
-                  <Arrow />
-                </span>
-              </a>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -151,23 +93,16 @@ export function About() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="shell about-story">
+      <section className="section about-essay">
+        <div className="shell about-essay-grid">
           <Reveal>
-            <div className="about-story-visual">
-              <Photo
-                src={media.matchLanguage}
-                slot="story-side"
-                className="about-sticky-photo"
-                caption="Ask in the language you already use"
-              />
-            </div>
+            <p className="eyebrow">Story</p>
+            <h2>
+              A plumber, a lawyer, a trainer, a haircut, without switching
+              languages.
+            </h2>
           </Reveal>
-          <div className="about-story-copy">
-            <Reveal>
-              <p className="eyebrow">Story</p>
-              <h2>A plumber, a lawyer, a trainer, a haircut, without switching languages.</h2>
-            </Reveal>
+          <div className="about-essay-read">
             <Reveal delay={80}>
               <p>
                 Samba started in Boston because finding help nearby should not
@@ -251,23 +186,7 @@ export function About() {
         </div>
       </section>
 
-      <section className="splash">
-        <Reveal>
-          <div className="shell splash-split">
-            <div className="splash-copy">
-              <h2>The one app to get everything done.</h2>
-              <p className="splash-sub">iOS and Android. Free to start.</p>
-              <StoreBadges />
-            </div>
-            <Photo
-              src={media.matchApp}
-              slot="splash"
-              className="splash-photo"
-              caption="Get the app to hire, apply, or list"
-            />
-          </div>
-        </Reveal>
-      </section>
+      <SplashCta />
     </main>
   )
 }
