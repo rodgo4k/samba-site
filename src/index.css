@@ -2222,6 +2222,142 @@ p {
   color: var(--ink-2);
 }
 
+.how-shutter {
+  position: relative;
+  height: 340vh;
+  background: var(--linen);
+}
+
+.how-shutter-pin {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+  background: var(--linen);
+}
+
+.how-shutter-page {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+}
+
+.how-shutter:not(.is-static) .how-shutter-page {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.how-shutter:not(.is-static) .how-shutter-page:first-of-type {
+  opacity: 1;
+  visibility: visible;
+}
+
+.how-shutter-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  padding: 108px clamp(24px, 5vw, 72px) 56px;
+  max-width: 620px;
+  width: 100%;
+  margin-left: auto;
+}
+
+.how-shutter-copy h2 {
+  margin: 0;
+  max-width: 14ch;
+  font-size: clamp(32px, 4.4vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.how-shutter-copy p:not(.eyebrow) {
+  margin: 0;
+  max-width: 42ch;
+  color: var(--ink-2);
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.how-shutter-copy ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.how-shutter-copy li {
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--ice);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.how-shutter-visual {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.how-shutter-visual > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 18%;
+}
+
+.how-shutter-overlay {
+  z-index: 6;
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  overflow: clip;
+  opacity: 0;
+}
+
+.how-shutter-panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.how-shutter-blade {
+  flex: 1 1 0;
+  width: 100%;
+  min-height: 0;
+  background: #c5c8bb;
+}
+
+.how-shutter.is-static {
+  height: auto;
+}
+
+.how-shutter.is-static .how-shutter-pin {
+  position: relative;
+  height: auto;
+  display: grid;
+  gap: 0;
+}
+
+.how-shutter.is-static .how-shutter-page {
+  position: relative;
+  min-height: 100svh;
+}
+
+.how-shutter.is-static .how-shutter-overlay {
+  display: none;
+}
+
 .start-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2951,6 +3087,33 @@ p {
     height: 240px;
   }
 
+  .how-shutter-page {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+
+  .how-shutter-copy {
+    padding: 88px 20px 16px;
+    gap: 10px;
+    max-width: none;
+    align-items: center;
+    text-align: center;
+  }
+
+  .how-shutter-copy h2 {
+    max-width: 16ch;
+    font-size: 28px;
+  }
+
+  .how-shutter-copy p:not(.eyebrow) {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .how-shutter-copy ul {
+    justify-content: center;
+  }
+
   .m-card {
     height: auto;
   }
@@ -3143,7 +3306,8 @@ p {
   .stagger-flip-cube,
   .pro-cards li,
   .pros li,
-  .how-app-word span {
+  .how-app-word span,
+  .how-shutter-blade {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;

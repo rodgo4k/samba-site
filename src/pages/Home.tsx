@@ -1,8 +1,6 @@
 import { Collage } from '../components/Collage'
 import { DevStudio } from '../components/DevStudio'
-import { HowApp } from '../components/HowApp'
-import { HowChat } from '../components/HowChat'
-import { HowConfirm } from '../components/HowConfirm'
+import { HowShutter } from '../components/HowShutter'
 import { HousingStudio } from '../components/HousingStudio'
 import { MatchStudio } from '../components/MatchStudio'
 import { Photo } from '../components/Photo'
@@ -13,27 +11,6 @@ import { StoreBadges } from '../components/StoreIcons'
 import { WhyRail } from '../components/WhyRail'
 import { media } from '../lib/media'
 import { useState } from 'react'
-
-const STEPS = [
-  {
-    n: '01',
-    t: 'Ask Samba AI',
-    d: 'Describe the job in your words. Preview who is around.',
-    src: media.howAsk,
-  },
-  {
-    n: '02',
-    t: 'Open the app',
-    d: 'Nothing books here. Hire, message, and apply in Samba.',
-    src: media.howApp,
-  },
-  {
-    n: '03',
-    t: 'Done in your language',
-    d: 'Chat with a pro nearby, on your phone.',
-    src: media.howDone,
-  },
-]
 
 const SCALE = [
   {
@@ -163,34 +140,7 @@ export function Home() {
 
       <WhyRail />
 
-      <section className="section">
-        <div className="shell">
-          <Reveal>
-            <div className="section-header">
-              <p className="eyebrow">How</p>
-              <h2>Three steps. Then the app.</h2>
-            </div>
-          </Reveal>
-          <div className="steps">
-            {STEPS.map((s, i) => (
-              <Reveal key={s.n} delay={i * 90}>
-                <article className="step">
-                  {s.n === '01' ? (
-                    <HowChat />
-                  ) : s.n === '02' ? (
-                    <HowApp />
-                  ) : (
-                    <HowConfirm />
-                  )}
-                  <span className="step-n">{s.n}</span>
-                  <h3>{s.t}</h3>
-                  <p>{s.d}</p>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HowShutter />
 
       <section className="section" id="start">
         <div className="shell">
