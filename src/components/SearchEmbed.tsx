@@ -120,6 +120,7 @@ export function SearchEmbed({
               key={c.id}
               type="button"
               role="listitem"
+              data-cat={c.id}
               className={`cat${active === c.id ? ' on' : ''}${pop === c.id ? ' pop' : ''}`}
               onClick={() => run(c.label, c.id)}
             >

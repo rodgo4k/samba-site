@@ -11,24 +11,6 @@ export function AboutMotion({ root }: { root: RefObject<HTMLElement | null> }) {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
     const ctx = gsap.context(() => {
-      const shot = el.querySelector('.hero-shot .photo-crop img')
-      if (shot) {
-        gsap.fromTo(
-          shot,
-          { scale: 1.16 },
-          {
-            scale: 1,
-            ease: 'none',
-            scrollTrigger: {
-              trigger: '.about-hero',
-              start: 'top top',
-              end: 'bottom top',
-              scrub: true,
-            },
-          },
-        )
-      }
-
       const family = el.querySelector('.scale-board')
       if (family) {
         gsap.from(family, {

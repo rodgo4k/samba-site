@@ -1,7 +1,6 @@
 import { useRef } from 'react'
 import { AboutMotion } from '../components/AboutMotion'
 import { LangCycle } from '../components/LangCycle'
-import { Photo } from '../components/Photo'
 import { Reveal } from '../components/Reveal'
 import { FamilyStudio } from '../components/FamilyStudio'
 import { SplashCta } from '../components/SplashCta'
@@ -52,28 +51,37 @@ export function About() {
     <main ref={root} className="about-page">
       <AboutMotion root={root} />
 
-      <section className="hero about-hero">
-        <div className="shell hero-inner">
-          <p className="eyebrow">About</p>
-          <h1 className="about-title enter">
-            <span>We built Samba so you don’t have to translate your life.</span>
-            <span className="accent">
-              A marketplace for professionals, and a fairer way to rent and hire.
-            </span>
-          </h1>
-          <ul className="about-ticks enter">
-            <li>Boston, 2024</li>
-            <li>Massachusetts · New Jersey</li>
-            <li>Hire in the app</li>
-          </ul>
-        </div>
-        <div className="enter">
-          <Photo
-            src={media.aboutHero}
-            className="hero-shot"
-            slot="story"
-            caption="Boston, 2024. A Foretheist product"
-          />
+      <section className="about-intro">
+        <div className="shell about-intro-stage enter">
+          <figure className="about-intro-frame">
+            <img src={media.aboutHero} alt="" width={1024} height={681} />
+            <figcaption>Boston, 2024</figcaption>
+          </figure>
+          <div className="about-intro-copy">
+            <p className="eyebrow">About</p>
+            <p className="about-intro-mark" aria-hidden="true">
+              2024
+            </p>
+            <h1>We built Samba so you don’t have to translate your life.</h1>
+            <p className="about-intro-sub">
+              A marketplace for professionals, and a fairer way to rent and
+              hire.
+            </p>
+            <ul className="about-intro-facts">
+              <li>
+                <span>Founded</span>
+                Boston, 2024
+              </li>
+              <li>
+                <span>Live now</span>
+                Massachusetts · New Jersey
+              </li>
+              <li>
+                <span>Hire</span>
+                In the app
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
