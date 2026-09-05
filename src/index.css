@@ -525,17 +525,13 @@ p {
 }
 
 .about-intro {
-  display: flex;
-  align-items: center;
-  min-height: calc(100svh - 64px);
-  padding: 24px 0;
+  padding: 28px 0 72px;
   background: var(--linen);
 }
 
 .about-intro-stage {
   display: grid;
-  gap: 80px;
-  width: 100%;
+  gap: 28px;
 }
 
 .about-intro-frame {
@@ -634,10 +630,22 @@ p {
   text-transform: uppercase;
 }
 
+@media (max-width: 900px) {
+  .about-intro {
+    display: flex;
+    align-items: center;
+    min-height: calc(100svh - 64px);
+    padding: 24px 0;
+  }
+
+  .about-intro-stage {
+    gap: 80px;
+    width: 100%;
+  }
+}
+
 @media (min-width: 901px) {
   .about-intro {
-    display: block;
-    min-height: 0;
     padding: 72px 0 120px;
   }
 
