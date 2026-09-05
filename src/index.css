@@ -525,13 +525,17 @@ p {
 }
 
 .about-intro {
-  padding: 28px 0 72px;
+  display: flex;
+  align-items: center;
+  min-height: calc(100svh - 64px);
+  padding: 24px 0;
   background: var(--linen);
 }
 
 .about-intro-stage {
   display: grid;
-  gap: 28px;
+  gap: 80px;
+  width: 100%;
 }
 
 .about-intro-frame {
@@ -613,6 +617,7 @@ p {
 
 .about-intro-facts li {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
   padding: 14px 0;
@@ -631,6 +636,8 @@ p {
 
 @media (min-width: 901px) {
   .about-intro {
+    display: block;
+    min-height: 0;
     padding: 72px 0 120px;
   }
 
