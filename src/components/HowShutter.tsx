@@ -17,32 +17,22 @@ const STEPS = [
 
 export function HowShutter() {
   return (
-    <section className="how-badge" id="how">
-      <div className="how-badge-card">
-        <div className="how-badge-start">
-          <div className="how-badge-label">
-            <span>New</span>
+    <section className="how-steps" id="how">
+      <div className="how-steps-container">
+        <div className="how-steps-collection">
+          <div className="how-steps-list">
+            {STEPS.map((step) => (
+              <article key={step.t} className="how-steps-item">
+                <h3>{step.t}</h3>
+                <p>{step.d}</p>
+              </article>
+            ))}
           </div>
-          <h2>
-            Ask
-            <br />
-            Hire
-            <br />
-            Done
-          </h2>
-        </div>
-        <div className="how-badge-end">
-          <img src={media.howHouse} alt="" />
+          <figure className="how-steps-visual">
+            <img src={media.howHouse} alt="" />
+          </figure>
         </div>
       </div>
-      <ol className="how-badge-steps">
-        {STEPS.map((step) => (
-          <li key={step.t}>
-            <strong>{step.t}</strong>
-            <p>{step.d}</p>
-          </li>
-        ))}
-      </ol>
     </section>
   )
 }

@@ -58,7 +58,6 @@ export function ScaleStudio() {
     const fills = gsap.utils.toArray<HTMLElement>('[data-scale-fill]', el)
     const n = slides.length
     let current = 0
-    let busy = false
     let hold: gsap.core.Tween | null = null
     let flip: gsap.core.Timeline | null = null
 
@@ -89,10 +88,9 @@ export function ScaleStudio() {
     }
 
     const goTo = (next: number) => {
-      if (next === current || busy) return
+      if (next === current) return
       const from = current
       const dir = ((next - from + n) % n) <= n / 2 ? 1 : -1
-      busy = true
       current = next
       setIndex(next)
       hold?.kill()
@@ -104,7 +102,6 @@ export function ScaleStudio() {
         defaults: { ease: 'osmo' },
         onComplete: () => {
           gsap.set(outgoing, { autoAlpha: 0, rotateX: dir * 75, yPercent: dir * -18 })
-          busy = false
           arm(next)
         },
       })
@@ -115,15 +112,15 @@ export function ScaleStudio() {
           autoAlpha: 0,
           rotateX: dir * -75,
           yPercent: dir * -18,
-          duration: 0.62,
+          duration: 0.22,
         },
         0,
       )
       flip.fromTo(
         incoming,
         { autoAlpha: 0, rotateX: dir * 75, yPercent: dir * 18 },
-        { autoAlpha: 1, rotateX: 0, yPercent: 0, duration: 0.72 },
-        0.08,
+        { autoAlpha: 1, rotateX: 0, yPercent: 0, duration: 0.26 },
+        0,
       )
     }
 
