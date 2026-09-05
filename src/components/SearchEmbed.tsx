@@ -3,6 +3,7 @@ import { CATEGORIES, type Professional } from '../data/professionals'
 import { storeUrl } from '../lib/links'
 import { media, portrait } from '../lib/media'
 import { searchSamba, type SearchResult } from '../lib/search'
+import { HiOutlineArrowLeft } from 'react-icons/hi2'
 import { StoreIcons } from './StoreIcons'
 
 const CAT_LABEL: Record<string, string> = {
@@ -49,6 +50,15 @@ export function SearchEmbed({
   const [turn, setTurn] = useState<Turn | null>(null)
   const [pop, setPop] = useState<string | null>(null)
 
+  function reset() {
+    setValue('')
+    setBusy(false)
+    setActive(null)
+    setTurn(null)
+    setPop(null)
+    onCategory?.(null)
+  }
+
   async function run(q: string, cat?: string) {
     const query = q.trim()
     if (!query || busy) return
@@ -69,6 +79,12 @@ export function SearchEmbed({
 
   return (
     <div className={`ask-panel ask-hero${turn || busy ? ' is-open' : ''}`}>
+      {(turn || busy) && (
+        <button type="button" className="ask-reset" onClick={reset}>
+          <HiOutlineArrowLeft />
+          Start a new search
+        </button>
+      )}
       <div className="ask-head">
         <img src="/favicon.png" alt="" width={36} height={36} />
         <div>

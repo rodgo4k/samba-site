@@ -218,7 +218,10 @@ export function Collage({ focusId }: { focusId: string | null }) {
   }, [])
 
   useEffect(() => {
-    if (!focusId) return
+    if (!focusId) {
+      apiRef.current?.reset()
+      return
+    }
     const root = rootRef.current
     const item = root?.querySelector<HTMLElement>(`[data-cat="${focusId}"]`)
     if (item) apiRef.current?.focus(item)

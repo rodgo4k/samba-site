@@ -134,13 +134,7 @@ export function Home() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="shell">
-          <Reveal>
-            <ScaleStudio />
-          </Reveal>
-        </div>
-      </section>
+      <ScaleStudio />
 
       <SplashCta />
     </main>
