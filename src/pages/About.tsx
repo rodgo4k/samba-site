@@ -2,7 +2,6 @@ import { useRef } from 'react'
 import { AboutMotion } from '../components/AboutMotion'
 import { LangCycle } from '../components/LangCycle'
 import { Reveal } from '../components/Reveal'
-import { FamilyStudio } from '../components/FamilyStudio'
 import { SplashCta } from '../components/SplashCta'
 import { FORETHEIST } from '../lib/links'
 import { media } from '../lib/media'
@@ -82,14 +81,6 @@ export function About() {
               </li>
             </ul>
           </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="shell">
-          <Reveal>
-            <FamilyStudio />
-          </Reveal>
         </div>
       </section>
 

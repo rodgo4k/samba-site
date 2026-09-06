@@ -18,4 +18,5 @@ export const SOCIAL = [
 
 export const FORETHEIST = 'https://www.foretheist.com'
 export const YANKEE = 'https://www.yankee.app'
-export const SUPPORT = 'mailto:support@samba.social'
+export const EMAIL = 'support@samba.social'
+export const SUPPORT = `mailto:${EMAIL}`

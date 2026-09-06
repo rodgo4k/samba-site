@@ -11,17 +11,6 @@ export function AboutMotion({ root }: { root: RefObject<HTMLElement | null> }) {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
     const ctx = gsap.context(() => {
-      const family = el.querySelector('.scale-board')
-      if (family) {
-        gsap.from(family, {
-          y: 40,
-          opacity: 0,
-          duration: 0.9,
-          ease: 'power3.out',
-          scrollTrigger: { trigger: family, start: 'top 88%' },
-        })
-      }
-
       const rail = el.querySelector('.about-rail-track')
       if (rail) {
         gsap.to(rail, {
