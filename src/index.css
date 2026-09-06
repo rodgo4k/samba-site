@@ -3890,6 +3890,20 @@ p {
   }
 }
 
+@media (max-width: 900px) {
+  .hero {
+    padding: 64px 0 24px;
+  }
+
+  .hero-copy {
+    gap: 80px;
+  }
+
+  .hero-split {
+    gap: 88px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
