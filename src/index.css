@@ -3892,11 +3892,11 @@ p {
 
 @media (max-width: 900px) {
   .hero {
-    padding: 64px 0 24px;
+    padding: 52px 0 24px;
   }
 
   .hero-copy {
-    gap: 80px;
+    gap: 68px;
   }
 
   .hero-split {
