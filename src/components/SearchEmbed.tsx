@@ -95,9 +95,14 @@ export function SearchEmbed({
 
       <div className="ask-log">
         {!turn && !busy && (
-          <p className="bubble bot">
-            What do you need? A room, a cut, a trainer, a leak, a chef.
-          </p>
+          <>
+            <p className="bubble bot">
+              What do you need? A room, a cut, a trainer, a leak, a chef.
+            </p>
+            <p className="bubble bot">
+              Click what you need below to start a search.
+            </p>
+          </>
         )}
         {turn && (
           <p className="bubble user" key={turn.q}>

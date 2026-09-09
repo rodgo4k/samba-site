@@ -4,14 +4,13 @@ import { HowShutter } from '../components/HowShutter'
 import { HousingStudio } from '../components/HousingStudio'
 import { MatchStudio } from '../components/MatchStudio'
 import { ScaleStudio } from '../components/ScaleStudio'
-import { Photo } from '../components/Photo'
+import { StreetView } from '../components/StreetView'
 import { Reveal } from '../components/Reveal'
 import { SearchEmbed } from '../components/SearchEmbed'
 import { SpatialSlider } from '../components/SpatialSlider'
 import { SplashCta } from '../components/SplashCta'
 import { StoreBadges } from '../components/StoreIcons'
 import { WhyRail } from '../components/WhyRail'
-import { media } from '../lib/media'
 import { useState } from 'react'
 
 export function Home() {
@@ -70,11 +69,7 @@ export function Home() {
       </section>
 
       <section className="section" id="housing">
-        <div className="shell">
-          <Reveal>
-            <HousingStudio />
-          </Reveal>
-        </div>
+        <HousingStudio />
       </section>
 
       <section className="section">
@@ -96,7 +91,7 @@ export function Home() {
           </Reveal>
           <Reveal delay={120}>
             <aside className="id-card">
-              <Photo src={media.controlPro} slot="control" className="id-photo" />
+              <StreetView className="id-street" />
               <div className="id-card-row">
                 <div>
                   <strong>Checked in</strong>
