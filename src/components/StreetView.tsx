@@ -15,8 +15,7 @@ export function StreetView({ className = '' }: { className?: string }) {
       <iframe
         title="Street View, Boston"
         src={src()}
-        loading="lazy"
-        allow="accelerometer; gyroscope; fullscreen; clipboard-write"
+        allow="accelerometer; gyroscope; fullscreen; clipboard-write; web-share"
         referrerPolicy="no-referrer-when-downgrade"
       />
       <figcaption>South End, Boston</figcaption>

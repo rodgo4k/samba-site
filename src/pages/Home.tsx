@@ -10,7 +10,6 @@ import { SearchEmbed } from '../components/SearchEmbed'
 import { SpatialSlider } from '../components/SpatialSlider'
 import { SplashCta } from '../components/SplashCta'
 import { StoreBadges } from '../components/StoreIcons'
-import { WhyRail } from '../components/WhyRail'
 import { useState } from 'react'
 
 export function Home() {
@@ -89,35 +88,31 @@ export function Home() {
               <StoreBadges />
             </div>
           </Reveal>
-          <Reveal delay={120}>
-            <aside className="id-card">
-              <StreetView className="id-street" />
-              <div className="id-card-row">
-                <div>
-                  <strong>Checked in</strong>
-                  <span>Identity · Massachusetts · New Jersey</span>
-                </div>
+          <aside className="id-card">
+            <StreetView className="id-street" />
+            <div className="id-card-row">
+              <div>
+                <strong>Checked in</strong>
+                <span>Identity · Massachusetts · New Jersey</span>
               </div>
-              <dl>
-                <div>
-                  <dt>Status</dt>
-                  <dd>Live</dd>
-                </div>
-                <div>
-                  <dt>Hire</dt>
-                  <dd>In the app</dd>
-                </div>
-                <div>
-                  <dt>Cap</dt>
-                  <dd>2 months rent</dd>
-                </div>
-              </dl>
-            </aside>
-          </Reveal>
+            </div>
+            <dl>
+              <div>
+                <dt>Status</dt>
+                <dd>Live</dd>
+              </div>
+              <div>
+                <dt>Hire</dt>
+                <dd>In the app</dd>
+              </div>
+              <div>
+                <dt>Cap</dt>
+                <dd>2 months rent</dd>
+              </div>
+            </dl>
+          </aside>
         </div>
       </section>
-
-      <WhyRail />
 
       <HowShutter />
 
