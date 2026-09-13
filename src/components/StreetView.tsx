@@ -1,7 +1,7 @@
 const BOSTON = {
-  lat: 42.34358,
-  lng: -71.07192,
-  heading: 168,
+  lat: 42.34912,
+  lng: -71.11491,
+  heading: 185,
   pitch: 2,
 }
 
@@ -18,7 +18,7 @@ export function StreetView({ className = '' }: { className?: string }) {
         allow="accelerometer; gyroscope; fullscreen; clipboard-write; web-share"
         referrerPolicy="no-referrer-when-downgrade"
       />
-      <figcaption>South End, Boston</figcaption>
+      <figcaption>8 Egmont St, Boston</figcaption>
     </figure>
   )
 }
