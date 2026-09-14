@@ -1527,6 +1527,11 @@ p {
   color: #5a3a8a;
 }
 
+.pro-tag.housing {
+  background: var(--leaf-soft);
+  color: var(--leaf-2);
+}
+
 .pro-card-foot {
   display: flex;
   align-items: center;

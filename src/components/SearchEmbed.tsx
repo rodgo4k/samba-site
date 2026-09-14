@@ -3,6 +3,7 @@ import { CATEGORIES, type Professional } from '../data/professionals'
 import { storeUrl } from '../lib/links'
 import { media, portrait } from '../lib/media'
 import { searchSamba, type SearchResult } from '../lib/search'
+import { ROOMS, type RoomListing } from '../data/rooms'
 import { HiOutlineArrowLeft } from 'react-icons/hi2'
 import { StoreIcons } from './StoreIcons'
 
@@ -159,11 +160,26 @@ export function SearchEmbed({
 }
 
 function Result({ a }: { a: SearchResult }) {
-  if (a.kind === 'text' || a.kind === 'housing') {
+  if (a.kind === 'text') {
     return (
       <div className="ask-out">
         <p className="bubble bot">{a.text}</p>
         <StoreIcons />
+      </div>
+    )
+  }
+
+  if (a.kind === 'housing') {
+    return (
+      <div className="ask-out">
+        <p className="bubble bot">{a.text}</p>
+        <ul className="pro-cards">
+          {(a.listings?.length ? a.listings : ROOMS).map((room, i) => (
+            <li key={room.id} style={{ animationDelay: `${i * 70}ms` }}>
+              <RoomCard room={room} />
+            </li>
+          ))}
+        </ul>
       </div>
     )
   }
@@ -212,6 +228,37 @@ function Star() {
         d="M12 2.6 14.7 8l6 .9-4.3 4.2 1 5.9L12 16.2 6.6 19l1-5.9L3.3 8.9 9.3 8z"
       />
     </svg>
+  )
+}
+
+function RoomCard({ room }: { room: RoomListing }) {
+  return (
+    <a
+      className="pro-card"
+      href={storeUrl()}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span className="pro-card-photo">
+        <img src={room.photo} alt="" />
+      </span>
+      <div className="pro-card-body">
+        <p className="pro-card-name">
+          <strong>{room.title}</strong>
+          <OutLink />
+        </p>
+        <p className="pro-card-row">
+          <span>{room.type}</span>
+          <span className="pro-tag housing">{room.rent}</span>
+        </p>
+        <p className="pro-card-foot">
+          <span>
+            {room.city} · {room.miles}
+          </span>
+          <span>Deposit {room.deposit}</span>
+        </p>
+      </div>
+    </a>
   )
 }
 
