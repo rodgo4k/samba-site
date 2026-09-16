@@ -1897,15 +1897,12 @@ p {
   min-height: 420px;
   object-fit: cover;
   opacity: 0;
-  transform: scale(1.08);
-  transition:
-    opacity 0.75s var(--ease),
-    transform 1.15s var(--ease);
+  transform: translate3d(0, calc(var(--p, 0) * -18px), 0);
+  transition: opacity 0.4s var(--ease);
 }
 
 .photo-stage img.on {
   opacity: 1;
-  transform: scale(1) translate3d(0, calc(var(--p, 0) * -18px), 0);
 }
 
 .photo-chip {
@@ -2360,10 +2357,6 @@ p {
     opacity: 0;
     transform: translateY(8px);
   }
-}
-
-.flow-tabs small {
-  animation: rise 0.3s ease;
 }
 
 .m-card {

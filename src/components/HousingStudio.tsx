@@ -35,6 +35,7 @@ type Tab = (typeof FLOWS)[number]['id']
 export function HousingStudio() {
   const root = useRef<HTMLDivElement>(null)
   const tabRef = useRef<Tab>('rent')
+  const lock = useRef(false)
   const [tab, setTab] = useState<Tab>('rent')
   const [pinned, setPinned] = useState(false)
   const current = FLOWS.find((f) => f.id === tab) ?? FLOWS[0]
@@ -55,6 +56,7 @@ export function HousingStudio() {
       start: 'top top+=68',
       end: 'bottom bottom',
       onUpdate: (self) => {
+        if (lock.current) return
         const next =
           FLOWS[Math.min(FLOWS.length - 1, Math.floor(self.progress * FLOWS.length))]
             ?.id ?? 'rent'
@@ -62,21 +64,24 @@ export function HousingStudio() {
       },
     })
 
-    return () => st.kill()
+    const release = () => {
+      lock.current = false
+    }
+    window.addEventListener('wheel', release, { passive: true })
+    window.addEventListener('touchmove', release, { passive: true })
+
+    return () => {
+      st.kill()
+      window.removeEventListener('wheel', release)
+      window.removeEventListener('touchmove', release)
+    }
   }, [])
 
   function goTo(id: Tab) {
+    if (id === tabRef.current) return
+    tabRef.current = id
     setTab(id)
-    const el = root.current
-    if (!el || !pinned) return
-    const i = FLOWS.findIndex((f) => f.id === id)
-    const start = window.scrollY + el.getBoundingClientRect().top
-    const range = el.offsetHeight - window.innerHeight
-    if (range <= 0) return
-    window.scrollTo({
-      top: start + ((i + 0.4) / FLOWS.length) * range,
-      behavior: 'smooth',
-    })
+    lock.current = true
   }
 
   return (
